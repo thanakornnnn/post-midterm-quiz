@@ -1,7 +1,19 @@
 import csv, os
 
-__location__ = os.path.realpath(
-    os.path.join(os.getcwd(), os.path.dirname(__file__)))
+# __location__ = os.path.realpath(
+#     os.path.join(os.getcwd(), os.path.dirname(__file__)))
+
+class Readcsv:
+    def __init__(self, filename):
+        self.data = []
+        self.filename = filename
+        self.__location__ = os.path.realpath(os.path.join(os.getcwd(), os.path.dirname(__file__)))
+
+    def read_csv(self):
+        with open(self.filename) as file:
+            csv_reader = csv.DictReader(file)
+            for row in csv_reader:
+                self.data.append(dict(row))
 
 class DB:
     def __init__(self):
