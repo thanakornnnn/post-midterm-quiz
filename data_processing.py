@@ -52,6 +52,14 @@ class Table:
                 filtered_table.table.append(item1)
         return filtered_table
 
+    def insert_row(self, diction):
+        '''
+        This method inserts a dictionary, dict, into a Table object, effectively adding a row to the Table.
+        '''
+        if isinstance(diction, dict):
+            self.table.append(dict)
+
+
     def __is_float(self, element):
         if element is None: 
             return False
