@@ -60,6 +60,17 @@ class Table:
             self.table.append(dict)
 
 
+    def update_row(self, primary_attribute, primary_attribute_value, update_attribute, update_value):
+        '''
+        This method updates the current value of update_attribute to update_value
+        For example, my_table.update_row('Film', 'A Serious Man', 'Year', '2022') will change the 'Year' attribute for the 'Film'
+        'A Serious Man' from 2009 to 2022
+        '''
+        for i in self.table:
+            primary_attribute = list(i.keys())[-1]
+            if i[primary_attribute] == primary_attribute_value:
+                i[primary_attribute_value] = update_value
+
     def __is_float(self, element):
         if element is None: 
             return False
