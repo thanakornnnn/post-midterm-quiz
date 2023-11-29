@@ -68,7 +68,7 @@ class Table:
         '''
         for i in self.table:
             primary_attribute = list(i.keys())[-1]
-            if i[primary_attribute] == primary_attribute_value:
+            if i[primary_attribute] == update_attribute:
                 i[primary_attribute_value] = update_value
 
     def __is_float(self, element):
